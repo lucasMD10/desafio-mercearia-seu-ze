@@ -1,0 +1,8 @@
+:root {
+  --brand-900:#004e36; --brand-700:#006f46; --brand-500:#2c8746;
+  --cream-100:#faf5eb; --paper-100:#f8f7f5; --white:#fff;
+  --ink-900:#2e2d2b; --ink-600:#565553; --offer-500:#f4c542;
+  --font-heading:'Newsreader',Georgia,serif; --font-body:'Manrope',Arial,sans-serif;
+  --max-width:1280px; --gutter:64px; --section-space:112px;
+  --ease:cubic-bezier(.22,1,.36,1); --header-offset:152px;
+}
