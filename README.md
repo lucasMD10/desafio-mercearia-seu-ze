@@ -4,9 +4,36 @@ Cartão de visitas digital para uma mercearia de bairro em Curitiba, com foco em
 
 ## Estado atual
 
-**Pack 1 — planejamento e wireframes concluídos.**
+**Pack 2 — primeira implementação disponível.**
 
-Nesta etapa ainda não há HTML, CSS ou JavaScript. Primeiro foram definidos a direção visual, a arquitetura da informação, as regras de conteúdo, as regras de movimento e os wireframes que orientarão a implementação da tela no próximo pack.
+HTML semântico, CSS responsivo e JavaScript modular, sem framework ou dependências de execução. A interface segue a paleta e a arquitetura aprovadas, com menu móvel, revelação progressiva, parallax discreto e movimento reduzido.
+
+### Como executar
+
+Requer Node.js 20.11 ou superior. Não é necessário instalar pacotes.
+
+```sh
+npm start
+```
+
+Abra http://localhost:3000. Para verificar as regras de conteúdo:
+
+```sh
+npm test
+```
+
+Também é possível servir a raiz com qualquer servidor estático. Não abrir por `file://`, pois o JavaScript usa módulos.
+
+### Estado da entrega
+
+- Interface e animações implementadas; código versionado na `main`.
+- Três testes automatizados de ofertas, datas em São Paulo e WhatsApp aprovados.
+- Dados comerciais ainda pendentes: nenhuma oferta, telefone ou localização foi inventada.
+- Fotografia gerada provisória, identificada como ilustrativa; substituir por fotos autorizadas.
+- Validação visual em navegador pendente: o ambiente não tinha Chromium e o download retornou HTTP 502. Não há medição de Lighthouse nem validação em Firefox/Edge.
+- Sem implantação pública nesta etapa. Este pack entrega a implementação no GitHub.
+
+Veja [implementação, configuração e pendências](docs/IMPLEMENTACAO.md).
 
 ## Objetivo do projeto
 
@@ -78,7 +105,7 @@ As duas são fontes abertas e cumprem papéis semelhantes às famílias serifada
 - [Análise das referências visuais](docs/REFERENCIAS-VISUAIS.md)
 - [Leitura e anotações dos wireframes](docs/WIREFRAME.md)
 - [Wireframe desktop](docs/wireframe-desktop.svg)
-- [Wireframe mobile](docs/wireframe-mobile.svg)
+- Wireframe mobile: descrito no documento de wireframes; SVG não disponibilizado nesta etapa.
 
 ### Prévia dos wireframes
 
@@ -88,25 +115,20 @@ As duas são fontes abertas e cumprem papéis semelhantes às famílias serifada
 
 #### Mobile
 
-![Wireframe mobile da Mercearia do Seu Zé](docs/wireframe-mobile.svg)
+Consulte as regras mobile em [WIREFRAME.md](docs/WIREFRAME.md).
 
-## Estrutura do repositório nesta fase
+## Estrutura do repositório
 
 ```text
-desafio-mercearia-seu-ze/
-├── README.md
-├── assets/
-│   └── images/
-│       └── .gitkeep
-└── docs/
-    ├── PLANEJAMENTO.md
-    ├── REFERENCIAS-VISUAIS.md
-    ├── WIREFRAME.md
-    ├── wireframe-desktop.svg
-    └── wireframe-mobile.svg
+assets/       # Imagem WebP e favicon SVG
+src/data/     # Dados confirmados da loja e ofertas
+src/scripts/  # Menu, conteúdo e movimento
+src/styles/   # Tokens, base, layout, componentes, responsividade
+scripts/      # Servidor local sem dependências
+tests/        # Regras de conteúdo
+docs/         # Planejamento, referências e implementação
+index.html    # Página semântica
 ```
-
-Os arquivos de interface serão criados somente no próximo pack, após a aprovação do planejamento e do wireframe.
 
 ## Plano de execução
 
@@ -115,10 +137,10 @@ Os arquivos de interface serão criados somente no próximo pack, após a aprova
 | 1. Descoberta | Requisitos, referências e restrições consolidados | Concluída |
 | 2. Planejamento | Arquitetura, identidade, conteúdo, movimento e regras | Concluída |
 | 3. Wireframe | Versões desktop e mobile documentadas | Concluída |
-| 4. Interface | HTML semântico e estrutura completa da página | Próximo pack |
-| 5. Estilo | CSS responsivo, tokens visuais e componentes | Pendente |
-| 6. Interações | JavaScript progressivo e animações acessíveis | Pendente |
-| 7. Validação | Responsividade, acessibilidade, SEO e desempenho | Pendente |
+| 4. Interface | HTML semântico e estrutura completa da página | Implementada |
+| 5. Estilo | CSS responsivo, tokens visuais e componentes | Implementado; revisão visual pendente |
+| 6. Interações | JavaScript progressivo e animações acessíveis | Implementadas |
+| 7. Validação | Responsividade, acessibilidade, SEO e desempenho | Testes de regras aprovados; navegador pendente |
 | 8. Entrega | Revisão final e publicação | Pendente |
 
 ## Equipe

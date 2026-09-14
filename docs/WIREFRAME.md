@@ -5,7 +5,7 @@ Os wireframes representam a estrutura aprovada para a futura página. Eles são 
 ## Arquivos
 
 - [Versão desktop](wireframe-desktop.svg)
-- [Versão mobile](wireframe-mobile.svg)
+- Versão mobile: comportamento descrito abaixo; o SVG não foi disponibilizado nesta etapa.
 
 ## Como ler
 

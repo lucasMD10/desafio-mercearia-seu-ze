@@ -40,7 +40,7 @@ function renderStore() {
   const contact = whatsappUrl(store.whatsapp);
   if (contact) {
     document.querySelectorAll('[data-whatsapp], [data-whatsapp-final]').forEach(link => {
-      link.href = contact; link.hidden = false;
+      link.href = contact; link.hidden = false; link.setAttribute('aria-label', 'Falar no WhatsApp');
       const label = link.querySelector('span'); if (label) label.textContent = 'Falar no WhatsApp';
     });
     document.querySelector('#contact-note').textContent = 'Tem alguma dúvida? Converse com a gente pelo WhatsApp.';
@@ -109,5 +109,10 @@ function renderOffers() {
 initMenu(); renderStore(); renderOffers(); initMotion();
 document.querySelector('#year').textContent = new Date().getFullYear();
 // Revalidate dates when returning to a tab and across midnight in São Paulo.
-setInterval(renderOffers, 60_000);
-document.addEventListener('visibilitychange', () => { if (!document.hidden) renderOffers(); });
+let renderedDay = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo' }).format(new Date());
+function refreshOffers() {
+  const day = new Intl.DateTimeFormat('pt-BR', { timeZone: 'America/Sao_Paulo' }).format(new Date());
+  if (day !== renderedDay) { renderOffers(); renderedDay = day; }
+}
+setInterval(refreshOffers, 60_000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshOffers(); });
