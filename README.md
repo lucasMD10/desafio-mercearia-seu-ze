@@ -6,7 +6,7 @@ Cartão de visitas digital para uma mercearia de bairro em Curitiba, com foco em
 
 ## Estado atual
 
-**V2 — catálogo acadêmico e refinamento visual, na branch `v2`.**
+**V2 — catálogo acadêmico e refinamento visual, integrada à `main`.**
 
 HTML semântico, CSS responsivo e JavaScript modular, sem framework ou dependências de execução. A interface segue a paleta e a arquitetura aprovadas, com menu móvel, revelação progressiva, parallax discreto e movimento reduzido.
 
@@ -28,15 +28,14 @@ Também é possível servir a raiz com qualquer servidor estático. Não abrir p
 
 ### Estado da entrega V2
 
-- Branch `v2` preserva a V1 na `main`.
+- A V2 foi integrada à `main` após revisão por pull request.
 - Header desktop reorganizado: faixa de marca/endereço, identidade, horários e contato, navegação e progresso de leitura.
 - Quatro ofertas com fotos geradas por IA em WebP, preços anteriores/atuais, categorias e filtros acessíveis.
 - Novos detalhes editoriais, entrada escalonada, zoom discreto das fotos e navegação ativa; suporte a movimento reduzido preservado.
 - Estrutura mobile da V1 preservada; apenas os novos componentes receberam adaptação.
 - Cinco testes automatizados aprovados; sintaxe JavaScript e `git diff --check` aprovados.
-- Validação visual/interativa da V2 pendente: navegador remoto bloqueou localhost.
-- O Pages público ainda mostra a V1. O deploy da V2 [falhou antes das etapas](https://github.com/lucasMD10/desafio-mercearia-seu-ze/actions/runs/34962936842); a causa não foi confirmada pelos logs disponíveis. Conferir as anotações e as regras do ambiente `github-pages` antes de tentar publicar novamente.
-- Workflow da V2 preparado para publicar pushes na branch `v2`; nenhuma regra de proteção foi alterada.
+- V2 validada no GitHub Pages após a liberação da branch no ambiente `github-pages`.
+- O workflow publica automaticamente cada push na `main`.
 
 ### Conteúdo da simulação
 
@@ -72,7 +71,7 @@ Imagens `pao.webp`, `morango.webp`, `queijo.webp` e `cafe.webp`, em `assets/imag
 
 Commits da V2:
 - `e25f21f` — catálogo acadêmico, dados da loja e quatro imagens de produtos.
-- `818cd49` — header desktop, filtros, contato demonstrativo, motion e workflow da V2.
+- `818cd49` — header desktop, filtros, contato demonstrativo e motion editorial.
 - Commit de fechamento — testes do catálogo e atualização deste README.
 
 Os documentos de planejamento e implementação da V1 são históricos; as decisões de conteúdo acadêmico acima substituem a restrição original a dados comerciais confirmados.
@@ -187,8 +186,21 @@ index.html    # Página semântica
 
 ## Equipe
 
-| Integrante
+| Integrante | Informações disponíveis nesta fase |
 |---|---|
-| Lucas Marcondes 
-| Joaquim 
-| Rafael Lima 
+| Lucas Marcondes | Engenharia de Software; desenvolvimento, Git/GitHub, dados e automação |
+| Daniel | Apoio na análise e no GitHub; demais informações profissionais a confirmar |
+| Joaquim | Informações profissionais e links a confirmar |
+| Rafael | Informações profissionais e links a confirmar |
+| Rafael Ribeiro | Informações profissionais e links a confirmar |
+| Fábio | Informações profissionais e links a confirmar |
+
+Antes da entrega acadêmica, o mini currículo e os links profissionais de cada integrante deverão ser completados.
+
+## Pendências para produção
+
+- Confirmar dados comerciais, canais oficiais, horários e ofertas antes de retirar o modo acadêmico.
+- Substituir imagens ilustrativas por fotografias autorizadas, se desejado.
+- Completar informações profissionais e links dos integrantes.
+- Validar desktop, teclado, filtros, diálogo e regressão mobile em navegadores adicionais.
+- Executar auditoria de acessibilidade e desempenho; ainda não há resultado de Lighthouse.
