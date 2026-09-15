@@ -8,6 +8,14 @@ export function initMotion() {
   function draw() {
     scheduled = false;
     header.classList.toggle('is-scrolled', scrollY > 80);
+    const range = document.documentElement.scrollHeight - innerHeight;
+    header.style.setProperty('--reading-progress', range > 0 ? Math.min(1, scrollY / range) : 0);
+    const links = [...document.querySelectorAll('#navegacao a[href^="#"]')];
+    let current = '#inicio';
+    for (const section of document.querySelectorAll('main section[id]')) {
+      if (section.getBoundingClientRect().top <= 240) current = '#' + section.id;
+    }
+    links.forEach(link => { if (link.hash === current) link.setAttribute('aria-current', 'location'); else link.removeAttribute('aria-current'); });
     for (const picture of pictures) {
       if (preference.matches || !desktop.matches) { picture.style.transform = ''; continue; }
       const rect = picture.parentElement.getBoundingClientRect();

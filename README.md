@@ -6,7 +6,7 @@ Cartão de visitas digital para uma mercearia de bairro em Curitiba, com foco em
 
 ## Estado atual
 
-**Pack 2 — primeira implementação disponível.**
+**V2 — catálogo acadêmico e refinamento visual, na branch `v2`.**
 
 HTML semântico, CSS responsivo e JavaScript modular, sem framework ou dependências de execução. A interface segue a paleta e a arquitetura aprovadas, com menu móvel, revelação progressiva, parallax discreto e movimento reduzido.
 
@@ -26,16 +26,56 @@ npm test
 
 Também é possível servir a raiz com qualquer servidor estático. Não abrir por `file://`, pois o JavaScript usa módulos.
 
-### Estado da entrega
+### Estado da entrega V2
 
-- Interface e animações implementadas; código versionado na `main`.
-- Três testes automatizados de ofertas, datas em São Paulo e WhatsApp aprovados.
-- Dados comerciais ainda pendentes: nenhuma oferta, telefone ou localização foi inventada.
-- Fotografia gerada provisória, identificada como ilustrativa; substituir por fotos autorizadas.
-- Validação visual em navegador pendente: o ambiente não tinha Chromium e o download retornou HTTP 502. Não há medição de Lighthouse nem validação em Firefox/Edge.
-- Site ativo no GitHub Pages. Cada atualização da `main` é publicada automaticamente por `.github/workflows/pages.yml`.
+- Branch `v2` preserva a V1 na `main`.
+- Header desktop reorganizado: faixa de marca/endereço, identidade, horários e contato, navegação e progresso de leitura.
+- Quatro ofertas com fotos geradas por IA em WebP, preços anteriores/atuais, categorias e filtros acessíveis.
+- Novos detalhes editoriais, entrada escalonada, zoom discreto das fotos e navegação ativa; suporte a movimento reduzido preservado.
+- Estrutura mobile da V1 preservada; apenas os novos componentes receberam adaptação.
+- Cinco testes automatizados aprovados; sintaxe JavaScript e `git diff --check` aprovados.
+- Validação visual/interativa da V2 pendente: navegador remoto bloqueou localhost.
+- O Pages público ainda mostra a V1. O deploy da V2 [falhou antes das etapas](https://github.com/lucasMD10/desafio-mercearia-seu-ze/actions/runs/34962936842); a causa não foi confirmada pelos logs disponíveis. Conferir as anotações e as regras do ambiente `github-pages` antes de tentar publicar novamente.
+- Workflow da V2 preparado para publicar pushes na branch `v2`; nenhuma regra de proteção foi alterada.
 
-Veja [implementação, configuração e pendências](docs/IMPLEMENTACAO.md).
+### Conteúdo da simulação
+
+O endereço fornecido é **Av. Sete de Setembro, 82 — Curitiba, PR**, perto do Batel Grill.
+
+Slogan: **O cuidado do bairro. O sabor de escolher bem.**
+
+| Informação | Conteúdo acadêmico fictício |
+|---|---|
+| Segunda a sexta | 7h às 20h |
+| Sábado | 7h às 18h |
+| Domingo | 8h às 13h |
+| Feriados | 8h às 14h |
+| Telefone | (41) 3000-0000 |
+| WhatsApp | (41) 90000-0000 |
+| Instagram | @seuze.mercearia |
+| Facebook | Mercearia do Seu Zé |
+
+| Produto | Unidade | Preço de referência | Oferta |
+|---|---|---|---|
+| Pão de fermentação natural | 500 g | R$ 23,90 | R$ 18,90 |
+| Morangos selecionados | 250 g | R$ 16,90 | R$ 12,90 |
+| Queijo artesanal meia cura | 300 g | R$ 36,90 | R$ 29,90 |
+| Café especial da casa | 250 g | R$ 39,90 | R$ 32,90 |
+
+Produtos, preços, horários, números e perfis são inventados para apresentação acadêmica, não ofertas ou canais comerciais verificados. O rodapé identifica a simulação; botões de contato abrem um diálogo demonstrativo e não enviam mensagens nem acessam perfis possivelmente pertencentes a terceiros. Dados estruturados comerciais não são emitidos no modo acadêmico.
+
+A vitrine usa `demoDate` (15/09/2026) e validade demonstrativa de 15 a 21/09/2026, mantendo os produtos visíveis para avaliação. Para uso comercial, substituir e verificar todos os dados, definir `academic: false`, atualizar datas e revisar links de contato/redes e dados estruturados.
+
+### Imagens e versionamento
+
+Imagens `pao.webp`, `morango.webp`, `queijo.webp` e `cafe.webp`, em `assets/images/`, foram geradas por IA: fotografia editorial quadrada de produto de mercearia premium, fundo creme, luz natural lateral, sem marcas ou texto. São ilustrativas, não fotografias do estabelecimento.
+
+Commits da V2:
+- `e25f21f` — catálogo acadêmico, dados da loja e quatro imagens de produtos.
+- `818cd49` — header desktop, filtros, contato demonstrativo, motion e workflow da V2.
+- Commit de fechamento — testes do catálogo e atualização deste README.
+
+Os documentos de planejamento e implementação da V1 são históricos; as decisões de conteúdo acadêmico acima substituem a restrição original a dados comerciais confirmados.
 
 ## Objetivo do projeto
 
@@ -96,7 +136,7 @@ As duas são fontes abertas e cumprem papéis semelhantes às famílias serifada
 - Não usar carrossel automático, vídeo de abertura, som ou loader que bloqueie o conteúdo.
 - Priorizar leitura rápida, contraste, navegação por teclado e uso no celular.
 - Usar animação como apoio à hierarquia, com alternativa para `prefers-reduced-motion`.
-- Exibir somente endereço, horários, contatos e preços confirmados.
+- Em produção, exibir somente dados confirmados; na V2 acadêmica, identificar explicitamente os dados fictícios.
 - Manter ofertas com período de validade e aviso de disponibilidade de estoque.
 - Direcionar o WhatsApp por link oficial com número sanitizado e mensagem inicial curta.
 - Preservar consistência local de nome, endereço e telefone para SEO.
@@ -123,7 +163,7 @@ Consulte as regras mobile em [WIREFRAME.md](docs/WIREFRAME.md).
 
 ```text
 assets/       # Imagem WebP e favicon SVG
-src/data/     # Dados confirmados da loja e ofertas
+src/data/     # Dados da loja, ofertas e modo acadêmico
 src/scripts/  # Menu, conteúdo e movimento
 src/styles/   # Tokens, base, layout, componentes, responsividade
 scripts/      # Servidor local sem dependências
@@ -158,13 +198,10 @@ index.html    # Página semântica
 
 Antes da entrega acadêmica, o mini currículo e os links profissionais de cada integrante deverão ser completados.
 
-## Dados ainda necessários
+## Pendências para produção
 
-- Endereço completo e ponto de referência.
-- Horários de segunda a sexta, sábado, domingo e feriados.
-- Telefone e WhatsApp.
-- Produtos e preços reais das ofertas.
-- Slogan definitivo.
-- Redes sociais.
-- Fotografias autorizadas da fachada, interior, equipe e produtos.
-- Informações profissionais e links dos integrantes.
+- Confirmar dados comerciais, canais oficiais, horários e ofertas antes de retirar o modo acadêmico.
+- Substituir imagens ilustrativas por fotografias autorizadas, se desejado.
+- Completar informações profissionais e links dos integrantes.
+- Resolver o deploy da V2 e validar desktop, teclado, filtros, diálogo e regressão mobile no site publicado.
+- Executar auditoria de acessibilidade e desempenho; ainda não há resultado de Lighthouse.
