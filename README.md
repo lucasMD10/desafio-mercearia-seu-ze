@@ -31,7 +31,7 @@ Também é possível servir a raiz com qualquer servidor estático. Não abrir p
 - Dados comerciais ainda pendentes: nenhuma oferta, telefone ou localização foi inventada.
 - Fotografia gerada provisória, identificada como ilustrativa; substituir por fotos autorizadas.
 - Validação visual em navegador pendente: o ambiente não tinha Chromium e o download retornou HTTP 502. Não há medição de Lighthouse nem validação em Firefox/Edge.
-- Sem implantação pública nesta etapa. Este pack entrega a implementação no GitHub.
+- Publicação preparada para GitHub Pages em `.github/workflows/pages.yml`. A ativação inicial do Pages nas configurações do repositório ainda precisa ser concluída pelo proprietário; depois disso, cada atualização da `main` será publicada automaticamente.
 
 Veja [implementação, configuração e pendências](docs/IMPLEMENTACAO.md).
 
