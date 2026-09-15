@@ -188,19 +188,6 @@ index.html    # Página semântica
 
 | Integrante | Informações disponíveis nesta fase |
 |---|---|
-| Lucas Marcondes | Engenharia de Software; desenvolvimento, Git/GitHub, dados e automação |
-| Daniel | Apoio na análise e no GitHub; demais informações profissionais a confirmar |
-| Joaquim | Informações profissionais e links a confirmar |
-| Rafael | Informações profissionais e links a confirmar |
-| Rafael Ribeiro | Informações profissionais e links a confirmar |
-| Fábio | Informações profissionais e links a confirmar |
-
-Antes da entrega acadêmica, o mini currículo e os links profissionais de cada integrante deverão ser completados.
-
-## Pendências para produção
-
-- Confirmar dados comerciais, canais oficiais, horários e ofertas antes de retirar o modo acadêmico.
-- Substituir imagens ilustrativas por fotografias autorizadas, se desejado.
-- Completar informações profissionais e links dos integrantes.
-- Validar desktop, teclado, filtros, diálogo e regressão mobile em navegadores adicionais.
-- Executar auditoria de acessibilidade e desempenho; ainda não há resultado de Lighthouse.
+| Lucas Marcondes 
+| Joaquim
+| Rafael Lima
