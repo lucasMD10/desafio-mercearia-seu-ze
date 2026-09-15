@@ -186,7 +186,7 @@ index.html    # Página semântica
 
 ## Equipe
 
-| Integrante | Informações disponíveis nesta fase |
+| Integrante
 |---|---|
 | Lucas Marcondes 
 | Joaquim
