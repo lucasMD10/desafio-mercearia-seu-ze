@@ -2,6 +2,8 @@
 
 Cartão de visitas digital para uma mercearia de bairro em Curitiba, com foco em proximidade, confiança, produtos frescos e acesso rápido às informações que realmente ajudam o cliente: ofertas, horário, endereço, localização e WhatsApp.
 
+**Site publicado:** https://lucasmd10.github.io/desafio-mercearia-seu-ze/
+
 ## Estado atual
 
 **Pack 2 — primeira implementação disponível.**
@@ -31,7 +33,7 @@ Também é possível servir a raiz com qualquer servidor estático. Não abrir p
 - Dados comerciais ainda pendentes: nenhuma oferta, telefone ou localização foi inventada.
 - Fotografia gerada provisória, identificada como ilustrativa; substituir por fotos autorizadas.
 - Validação visual em navegador pendente: o ambiente não tinha Chromium e o download retornou HTTP 502. Não há medição de Lighthouse nem validação em Firefox/Edge.
-- Publicação preparada para GitHub Pages em `.github/workflows/pages.yml`. A ativação inicial do Pages nas configurações do repositório ainda precisa ser concluída pelo proprietário; depois disso, cada atualização da `main` será publicada automaticamente.
+- Site ativo no GitHub Pages. Cada atualização da `main` é publicada automaticamente por `.github/workflows/pages.yml`.
 
 Veja [implementação, configuração e pendências](docs/IMPLEMENTACAO.md).
 
@@ -141,7 +143,7 @@ index.html    # Página semântica
 | 5. Estilo | CSS responsivo, tokens visuais e componentes | Implementado; revisão visual pendente |
 | 6. Interações | JavaScript progressivo e animações acessíveis | Implementadas |
 | 7. Validação | Responsividade, acessibilidade, SEO e desempenho | Testes de regras aprovados; navegador pendente |
-| 8. Entrega | Revisão final e publicação | Pendente |
+| 8. Entrega | Revisão final e publicação | GitHub Pages ativo; revisão de conteúdo pendente |
 
 ## Equipe
 
