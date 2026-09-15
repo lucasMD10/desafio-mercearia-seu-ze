@@ -186,8 +186,8 @@ index.html    # Página semântica
 
 ## Equipe
 
-| Integrante
-|---|---|
+| Integrante |
+|---|---|---|
 | Lucas Marcondes 
 | Joaquim
 | Rafael Lima
